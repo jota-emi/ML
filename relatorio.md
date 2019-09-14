@@ -20,13 +20,33 @@ Devido a imensa quantidade de dados e atributos na base de dados do sistema LoP,
 Após uma série de testes, os atributos que mais se mostraram relevantes foram:
 * **notaProva1** - Referente a nota do aluno na primeira prova;
 * **igualACeml123** - Quantidade de submissões em que o aluno atingiu 100% de acerto;
-* **subListaExer45** - Quantidade de submissões do aluno nas listas de exercícios durante as semanas 4 e 5;
+* **subListaExer45** - Quantidade de submissões do aluno nas listas de exercícios durante as semanas 4 e 5.
+
 Analisando tais atributos, podemos concluir que a nota da primeira prova é o mais forte indicador do desempenho do aluno, seguido pela quantidade de quetões certas nas primeiras listas, o que indica que alunos com mais acertos nas listas tendem a ter melhor desempenho. Por fim, a quantidade de submissões durante a quarta e quinta semanas, geralmente o período da primeira avaliação, revela o quanto o aluno está se preparando.
 
 ## Códigos 
+A atividade foi desenvolvida integralmente na linguagem Python, utilizando as bibliotecas Pandas, Keras e ScikitLearn.  
 
-* Mostrar trechos de códigos mais importantes e explicações.  
+* <h3> Criação das Camadas. </h3>
+~~~ python
+#Adicionando a camada de entrada e a primeira camada escondida
+classifier.add(Dense( activation = 'relu', input_dim = 3, units = 3, kernel_initializer = 'uniform'))
 
+#Adicionando segunda camada escondida
+classifier.add(Dense( activation = 'relu', units = 6, kernel_initializer = 'uniform' ))
+
+#Adicionando camada de saída
+classifier.add(Dense( activation = 'sigmoid', units = 1, kernel_initializer = 'uniform'))
+~~~
+Acima podemos ver que foram usadas três atributos para entrada (**input_dim = 3**), e três neurônios na camada (**units = 3**).
+Já na segunda camada escondida, seis neurônios foram setados, enquanto a camada de sáida é formada pela propagação 'sigmoid'.
+
+* <h3>Treinamento</h3>
+~~~ python
+# Fitting the ANN to the Training set
+classifier.fit(X_train, y_train, batch_size = 10, epochs = 60)
+~~~
+O treinamento foi realizado em 60 épocas, ou seja, repetido 60 vezes, enquanto o **batch_size = 10**
 ## Experimentos 
 
 * Descrever em detalhes os tipos de testes executados. 
