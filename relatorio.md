@@ -25,9 +25,26 @@ Após uma série de testes, os atributos que mais se mostraram relevantes foram:
 Analisando tais atributos, podemos concluir que a nota da primeira prova é o mais forte indicador do desempenho do aluno, seguido pela quantidade de quetões certas nas primeiras listas, o que indica que alunos com mais acertos nas listas tendem a ter melhor desempenho. Por fim, a quantidade de submissões durante a quarta e quinta semanas, geralmente o período da primeira avaliação, revela o quanto o aluno está se preparando.
 
 ## Códigos 
-A atividade foi desenvolvida integralmente na linguagem Python, utilizando as bibliotecas Pandas, Keras e ScikitLearn.  
+A atividade foi desenvolvida integralmente na linguagem Python, utilizando as bibliotecas Pandas e Keras.
 
-* <h3> Criação das Camadas. </h3>
+* <h3>Seleção de atributos</h3>
+~~~ python
+#notaProva1
+#igualACem123
+#subListaExer45
+X = dataset.iloc[:,[2,20,48]].values
+y = dataset.iloc[:, 11].valuesse( activation = 'relu', units = 6, kernel_initializer = 'uniform' ))
+~~~
+As colunas 2,20 e 48 correspondem respectivamente a notaProva1, igualACeml123 e subListaExerc45.
+
+* <h3> Separação Treinamento/Teste</h3>
+~~~ python
+# Splitting the dataset into the Training set and Test set
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+~~~
+25% dos dados reservados para a fase de testes.
+* <h3> Criação das Camadas</h3>
 ~~~ python
 #Adicionando a camada de entrada e a primeira camada escondida
 classifier.add(Dense( activation = 'relu', input_dim = 3, units = 3, kernel_initializer = 'uniform'))
@@ -47,8 +64,18 @@ Já na segunda camada escondida, seis neurônios foram setados, enquanto a camad
 classifier.fit(X_train, y_train, batch_size = 10, epochs = 60)
 ~~~
 O treinamento foi realizado em 60 épocas, ou seja, repetido 60 vezes, enquanto o **batch_size = 10**
-## Experimentos 
 
-* Descrever em detalhes os tipos de testes executados. 
-* Descrever os parâmentros avaliados. 
-* Explicar os resultados. 
+## Experimentos 
+* <h3>Matriz de Confusão</h3>
+~~~ python
+Matriz de Confusão:
+[[43  7]
+ [13 49]]
+Taxa de acerto:
+0.8214285714285714
+112
+~~~
+A matriz de confusão representa a quantidade de valores para os quais o algoritmo obteve um resultado de **43 Verdadeiros Positivos e 49 Verdadeiros Negativos**, correspondentes aos acertos e **7 Falsos Positivos e 13 Falsos Negativos**, totalizando uma taxa de acerto de **82%**  
+
+Com isso, o resultado obtido pela rede neural baseada em MLP com os parâmetros utilizados pode ser considerado satisfatório. O valor de 82% não é tão considerável quanto poderia ser. Entretanto, considerando o ruído da base de dados aliado a complexidade do problema, torna o resultado bom, capaz de dar um diagnóstico rápido para o aluno. Além disso, vários valores diferentes foram testados para as variáveis do modelo, concluindo assim que a quantidade de épocas e neurônios utilizada foi mais eficente.
+
