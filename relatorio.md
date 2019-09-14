@@ -18,9 +18,10 @@ Para nossa atividade 75% dos dados foram usados para o treinamento da rede neura
 Devido a imensa quantidade de dados e atributos na base de dados do sistema LoP, fez-se necessário realizar uma espécie de filtragem manual, selecionando um grupo de atributos que julgamos ter mais influência na previsão. Assim, o processo se torna mais rápido e mais eficiente, já que o algoritmo não precisa analisar dados que podem não ter influência alguma na aprovação ou não do aluno. Além disso, o objetivo do trabalho é ter um diagnóstico para o aluno já na primeira unidade, enquanto ainda há tempo para uma mudança de postura. Então, não é viável utilizar dados referentes a metade final do semestre.
 
 Após uma série de testes, os atributos que mais se mostraram relevantes foram:
-* Explicar o modelo de _machine learning_ (ML) que você está trabalhando. 
-* Explicar as etapas do treinamento e teste. 
-* Caso tenha selecionado atributos, explicar a motivação para a seleção de tais atributos. 
+* **notaProva1** - Referente a nota do aluno na primeira prova;
+* **igualACeml123** - Quantidade de submissões em que o aluno atingiu 100% de acerto;
+* **subListaExer45** - Quantidade de submissões do aluno nas listas de exercícios durante as semanas 4 e 5;
+Analisando tais atributos, podemos concluir que a nota da primeira prova é o mais forte indicador do desempenho do aluno, seguido pela quantidade de quetões certas nas primeiras listas, o que indica que alunos com mais acertos nas listas tendem a ter melhor desempenho. Por fim, a quantidade de submissões durante a quarta e quinta semanas, geralmente o período da primeira avaliação, revela o quanto o aluno está se preparando.
 
 ## Códigos 
 
