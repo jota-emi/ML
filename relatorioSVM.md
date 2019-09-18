@@ -33,14 +33,17 @@ Para o treinamento do algoritmo foram reservadas cerca de 75% das imagens gerada
 A aplicação do SVM foi feita integralmente em Python, utilizando as bibliotecas do Pandas e ScikitLearn. Enquanto o código para gerar a base de dados estava em JavaScript.
 
 <h3>* Separação Treinament/Teste </h3>
+
 ~~~ python
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 ~~~
+
 25% dos dados reservados para a fase de testes.
 
 <h3>* Escolha dos valores para os atributos gamma e C, processo de treinamento</h3>
+
 ~~~ python
 # Fitting SVM to the Training set
 from sklearn.svm import SVC
@@ -51,20 +54,25 @@ classifier = Pipeline((
 ))
 classifier.fit(X_train, y_train)
 ~~~ 
+
 Como podemos ver, os valores testados e escolhidos para gamma e C foram: **gamma=0.5** e **C=50** ;
 
 <h3>* Previsão da classificação (em pé ou sentado)</h3>
+
 ~~~ python
-# Predicting the Test set results
+#Predicting the Test set results
 y_pred = classifier.predict(X_test)
 ~~~
 
 ## Experimentos 
 <h3>* Matriz de confusão</h3>
+
 ~~~ python
-[[18  0]
+Matriz de confusão:
+[[18  0] 
  [0 14]]
-~~~ 
+~~~
+
 A matriz de confusão representa a quantidade de valores para os quais os resultados do algoritmo foram **Verdadeiros Positivos(18)** e **Verdadeiros Negativos(14)** , correspondentes aos acertos e **Falsos Positivos(0)** e **Falsos Negativos(0)** , totalizando uma taxa de acerto de 100%
 
 Com isso, o resultado obtido pela rede neural baseada em SVM com os parâmetros utilizados pode ser considerado excelente. O valor tão expressivo revela que o valores utilizados para gamma e C foram corretos, assim como demonstram uma qualidade enorme da base de dados, que proporcionou resultados limpos. Sendo assim, nas condições em que foram realizadas o experimento, o algoritmo se mostrou extremamente eficaz em classificar se a pessoa na foto está em pé ou sentada.
