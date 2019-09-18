@@ -1,16 +1,11 @@
-# Utilização de SVM para analisar imagens e analisar se a pessoa está em pé ou sentada 
+# Utilização de SVM para classificar a posição de um individuo a partir de imagens 
 
 ## Introdução
 Este trabalho foi desenvolvido por João Marcos Viana Silva, com orientação do prof. Orivaldo Santana. 
-A atividade tinha como objetivo conseguir prever logo nas primeiras semanas, com uma margem considerável de aceitação, 
-a aprovação ou não de um aluno da disciplina de Lógica de Programação, ministrada na Escola de Ciências e Tecnologia da UFRN.
-Com isso, seria possível orientar melhor os alunos em situação crítica, para que o prognóstico possa ser revertido, 
-além de conseguir uma análise mais efetiva sobre quais atributos do aluno mais impactam numa eventual aprovação. 
-A base de dados utilizada foi gerada e disponibilizada pelo professor e equipe do Sistema LoP, 
-nela estão contidas dezenas de atributos relacionados a resolução de questões por parte do aluno, como quantidade e notas.
+A atividade tinha como objetivo desenvolver um algoritmo capaz de classificar em duas categorias (em pé ou sentado) a posição em que uma pessoa estava em uma foto. Tal classificação abre o caminho para resolução de diversos tipos de problemas, como por exemplo, controle de equipamentos a partir de gestos, uso em videogames ou qualquer outro contexto que análise de posição seja importante. Além disso, a atividade exigiu a criação de uma base de dados própria, processo que é importante na ciência de dados em geral, proporcionando um conhecimento e preparo extra ao aluno. Sendo assim, a base foi gerada a partir de frames de um vídeo produzido pelo autor, aplicadas a uma API do TensorFlow chamada PoseEstimation, capaz de extrair as posições em pixels de onde estariam cada parte do corpo da pessoa na imagem. Ao final, a base continha 46 imagens, em que em 50% delas o individuo estava em pé e nos outros 50% estava sentado. 
 
+## Metodologia
 
-## Metodologia 
 O modelo utilizado para o desenvolvimento do algoritmo foi o Multilayer Perceptron. Esse 
 * Explicar o modelo de _machine learning_ (ML) que você está trabalhando. 
 * Explicar as etapas do treinamento e teste. 
