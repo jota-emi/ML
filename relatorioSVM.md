@@ -8,23 +8,24 @@ A atividade tinha como objetivo desenvolver um algoritmo capaz de classificar em
 O modelo utilizado para o desenvolvimento do algoritmo foi o Support Vector Machine (SVM). EXPLICAR SVM
 
 No nosso caso, o processamento dos dados foi feito da seguinte forma, cada imagem possuia atributos correspondentes as posições X e Y de cada parte do corpo utilizada pelo PoseEstimation, são elas:
-*Nariz;
-*Olho esquerdo;
-*Olho direito;
-*Orelha esquerda;
-*Orelha direita;
-*Ombro esquerdo;
-*Ombro direito;
-*Cotovelo esquerdo;
-*Cotovelo direito;
-*Pulso esquerdo;
-*Pulso direito;
-*Quadril esquerdo;
-*Quadril direito;
-*Joelho esquerdo;
-*Joelho direito;
-*Tornozelo esquerdo;
-*Tornozelo direito.
+
+* Nariz;
+* Olho esquerdo;
+* Olho direito;
+* Orelha esquerda;
+* Orelha direita;
+* Ombro esquerdo;
+* Ombro direito;
+* Cotovelo esquerdo;
+* Cotovelo direito;
+* Pulso esquerdo;
+* Pulso direito;
+* Quadril esquerdo;
+* Quadril direito;
+* Joelho esquerdo;
+* Joelho direito;
+* Tornozelo esquerdo;
+* Tornozelo direito.
 
 Para o treinamento do algoritmo foram reservadas cerca de 75% das imagens geradas. Ou seja, 3/4 das imagens foram utilizadas para que o algoritmo pudesse compará-las e encontrar padrões entre os atributos de cada uma das classificações. Sendo assim, os 30% restantes foram usandos na fase de testes, em que a SVM recebe novos dados e faz a previsão dos mesmos, podendo acertar ou errar.
 ## Códigos 
