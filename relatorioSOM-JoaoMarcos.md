@@ -1,11 +1,8 @@
-# Previsão de aprovação de alunos usando MLP 
+# Agrupamento e análise de perfil de alunos com rede SOM   
 
 ## Introdução
 Este trabalho foi desenvolvido por João Marcos Viana Silva, com orientação do prof. Orivaldo Santana. 
-A atividade tinha como objetivo conseguir prever logo nas primeiras semanas, com uma margem considerável de aceitação, 
-a aprovação ou não de um aluno da disciplina de Lógica de Programação, ministrada na Escola de Ciências e Tecnologia da UFRN.
-Com isso, seria possível orientar melhor os alunos em situação crítica, para que o prognóstico possa ser revertido, 
-além de conseguir uma análise mais efetiva sobre quais atributos do aluno mais impactam numa eventual aprovação. 
+A atividade tinha como objetivo analisar a relação existente (ou não) entre a quantidade de questões submetidas por um aluno da disciplina de Lógia de Programação, ministrada na Escola de Ciências e Tecnologia da UFRN, e sua aprovação ou reprovação ao final do semestre. Com isso, seria possível traçar o perfil do aluno e orientá-lo para melhor desempenho na disciplina, além de conseguir uma análise mais efetiva sobre o real impacto que a submissão de questões pelo sistema LOP tem numa eventual aprovação. 
 A base de dados utilizada foi gerada e disponibilizada pelo professor e equipe do Sistema LoP, 
 nela estão contidas dezenas de atributos relacionados a resolução de questões por parte dos alunos que cursaram a disciplina no período entre 2017 e 2019, como quantidade e notas.
 
