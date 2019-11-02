@@ -11,6 +11,9 @@ O modelo utilizado para o desenvolvimento do algoritmo foi o Self-Organizing Map
 
 !['Representação das camadas da rede SOM'](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR1x4NvuAXBPGIhI9a3991XLkEmI3ZGbPuE0CU-6q0oMVOCJXW5)
 
+
+***Figura 1 - Representação das camadas da rede SOM***
+
 Como a base de dados já era específica, contendo apenas o número de questões submetidas pelos alunos a cada semana, não foi necessário a realização de filtragem nos atributos a serem utilizados no treinamento, ou seja, todas as colunas que continham essas informações foram utilizadas.
 
 ## Códigos 
@@ -82,11 +85,17 @@ As matrizes acima representam a quantidade de alunos (Total e Aprovados, respect
 
 !['Matriz'](https://github.com/jota-emi/ML/blob/master/resultado%20neur%C3%B4nios.png?raw=true)
 
+***Figura 2 - Situação dos alunos em cada neurônio***
+
 Acima, podemos observar o resultado do agrupamento da rede, em que cada gráfico representa um neurônio e a proporção entre alunos aprovados e reprovados. A cor azul diz respeito a porcentagem de aprovados, enquanto a laranja, os reprovados.
 
-!['Cada Neurônio viasualizacao'](https://github.com/jota-emi/ML/blob/master/cadaneur%C3%B4nio.png?raw=true)
+!['Cada Neurônio viasualizacao'](https://github.com/jota-emi/ML/blob/master/cadaneur%C3%B4nio.png?raw=true)]
+
+
+***Figura 3 - Quantidade de questões submetidas em média pelos alunos de cada neurônio***
 
 Ainda foi possível criar gráficos para cada neurônio, onde podemos analisar a quantidade de questões submetidas por semana pelos alunos em cada neurônio.
 
-Com isso, o resultado obtido pela rede neural baseada em MLP com os parâmetros utilizados pode ser considerado satisfatório. O valor de 82% não é tão considerável quanto poderia ser. Entretanto, considerando o ruído da base de dados aliado a complexidade do problema, torna o resultado bom, capaz de dar um diagnóstico rápido para o aluno. Além disso, vários valores diferentes foram testados para as variáveis do modelo, concluindo assim que a quantidade de épocas e neurônios utilizada foi mais eficente.
+* <h3>Conclusão</h3>
 
+Ao final, podemos observar que a rede conseguiu dividir os alunos com características parecidas. A região direita, sobretudo a superior, da Figura 2 é onde encontra-se o maior número de alunos em situações de reprovação, não por coincidência, verificamos a partir da Figura 3 que tais alunos possuem pouquíssimas submissões. Ainda é possível observar que aqueles neurônios com 100% de aprovações, possuem características comuns de submissões bem regulares, com várias submissões em todas as semanas. Tais analises, deixam claro que existe uma relação de grande influência entre a quantidade e regularidade de questôes submetidas e a eventual aprovação do aluno.
