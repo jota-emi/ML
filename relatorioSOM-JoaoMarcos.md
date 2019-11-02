@@ -27,7 +27,7 @@ from sklearn import preprocessing
 le = preprocessing.LabelEncoder()
 dataset["situacao"] = le.fit_transform(dataset["situacao"])
 ~~~
-Logo de início, uma alteração precisou ser realizada no database. O atributo chamado 'situacao' tem seus como seus dados os grupos: 'APROVADO', 'APROVADO POR NOTA', 'REPROVADO POR NOTA', 'REPROVADO POR FALTAS' E 'REPROVADO POR NOTAS E FALTAS', todas no formato String. Por isso, como podemos ver no código acima, esses dados foram transformados em números inteiros correpondentes. Ou seja, os valores '0', '1', '2', '3', '4', '5', respectivamente substituíram as Strings.
+Logo de início, uma alteração precisou ser realizada no database. O atributo chamado 'situacao' tem seus como seus dados os grupos: 'APROVADO', 'APROVADO POR NOTA', 'REPROVADO POR NOTA', 'REPROVADO' E 'REPROVADO POR NOTA E FALTAS', todas no formato String. Por isso, como podemos ver no código acima, esses dados foram transformados em números inteiros correpondentes. Ou seja, os valores '0', '1', '2', '3', '4', '5', respectivamente substituíram as Strings.
 
 * <h3>Treinamento</h3>
 ~~~ python
